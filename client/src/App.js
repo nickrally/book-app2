@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router-dom";
+//named imports from respective implicit index.js files
 import { Navbar } from "./shared/Navbar";
 import { BookList } from "./pages/BookList";
 import { AddBook } from "./pages/AddBook";
@@ -9,10 +10,10 @@ function App() {
     <>
       <Navbar />
       <Switch>
-        <Route path="/books/create">
+        <Route path="/create-book">
           <AddBook />
         </Route>
-        <Route path="/books/:id">
+        <Route path="/update-book/:id">
           <UpdateBook />
         </Route>
         <Route path="/">
@@ -22,4 +23,5 @@ function App() {
     </>
   );
 }
+
 export default App;
