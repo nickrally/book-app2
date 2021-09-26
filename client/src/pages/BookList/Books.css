@@ -1,0 +1,33 @@
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "box";
+  grid-template-columns: 400px 400px 400px;
+  grid-gap: 20px;
+  color: #ccc;
+}
+
+.header {
+  grid-area: header;
+  background-color: #444;
+  padding: 10px;
+  width: 1220px;
+}
+
+.header a:link {
+  color: #eaddca;
+  text-decoration: none;
+  margin-right: 10px;
+}
+.header a:hover {
+  color: #ffff;
+}
+
+.box {
+  background-color: #ccc;
+  color: #000;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}

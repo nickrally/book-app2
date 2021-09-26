@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMutation, useQueryClient } from "react-query";
 import { removeBook } from "../../api";
+import "./Books.css";
 
 export const Book = ({ author, title, id }) => {
   const queryClient = useQueryClient();
@@ -11,7 +12,7 @@ export const Book = ({ author, title, id }) => {
     queryClient.invalidateQueries("books");
   };
   return (
-    <div>
+    <div className="box">
       <Link to={`/update-book/${id}`}>{title}</Link>
       <p>{author}</p>
       <button onClick={remove}>Remove</button>
