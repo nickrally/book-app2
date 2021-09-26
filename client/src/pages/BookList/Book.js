@@ -3,8 +3,7 @@ import { useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { removeBook } from "../../api";
 import "./Books.css";
-import Backdrop from "./Backdrop";
-import Modal from "./Modal";
+import ConfirmModal from "./ConfirmModal";
 
 export const Book = ({ author, title, id }) => {
   const [removeClicked, setRemoveClicked] = useState(false);
@@ -29,16 +28,11 @@ export const Book = ({ author, title, id }) => {
     <div className="box">
       <Link to={`/update-book/${id}`}>{title}</Link>
       <p>{author}</p>
-      <button onClick={remove}>Remove</button>
+      <button className="btn" onClick={remove}>
+        Remove
+      </button>
       {removeClicked && (
-        <>
-          <Backdrop />
-          <Modal>
-            <p>Are you sure?</p>
-            <button onClick={confirmRemove}>Yes</button>
-            <button onClick={cancelRemove}>No</button>
-          </Modal>
-        </>
+        <ConfirmModal confirm={confirmRemove} cancel={cancelRemove} />
       )}
     </div>
   );
