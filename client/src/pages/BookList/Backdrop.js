@@ -1,5 +1,4 @@
 import { createPortal } from "react-dom";
-import "./Books.css";
 
 const Backdrop = () => {
   const backdropRoot = document.getElementById("backdrop");
